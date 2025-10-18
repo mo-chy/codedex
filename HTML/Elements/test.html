@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mochy.me</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const originalTitle = "mochy.me";
+      const zalgoChars = ['̒', '̏', '̓', '̔', '̄', '̅', '̋', '̍', '̎', '̐', '̑', '̒', '̀', '́', '͂', '̓', '̈́', 'ͅ', '͆', '͇', '͈', '͉', '͊', '͋'];
+
+      function generateZalgoTitle() {
+        let newTitle = '';
+        
+        for (let i = 0; i < originalTitle.length; i++) {
+          newTitle += originalTitle[i];
+          
+          // random amount of zalgo for this char
+          let zalgoEffect = '';
+          let randomAmount = Math.floor(Math.random() * 5);
+          for (let j = 0; j < randomAmount; j++) {
+            zalgoEffect += zalgoChars[Math.floor(Math.random() * zalgoChars.length)];
+          }
+          
+          newTitle += zalgoEffect;
+        }
+
+        document.title = newTitle;
+
+        setTimeout(generateZalgoTitle, 100); // ultra-fast chaos
+      }
+
+      generateZalgoTitle();
+    });
+  </script>
+</head>
+<body>
+  <h1>Welcome to mochy.me—chaos served raw 🔥💀</h1>
+</body>
+</html>
